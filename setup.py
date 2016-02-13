@@ -24,7 +24,7 @@ test_requirements = [
 
 setup(
     name='base_model',
-    version='0.1.1',
+    version='0.1.2',
     description="Base model with uuid as primary key, and other helper fields like is_removed, removed_time, created_time, modified_time.",
     long_description=readme + '\n\n' + history,
     author="Aldiantoro Nugroho",
