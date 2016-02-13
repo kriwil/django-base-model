@@ -48,4 +48,8 @@ class BaseModel(models.Model):
     def remove(self):
         self.is_removed = True
         self.removed_time = timezone.now()
-        self.save()
+        return self.save()
+
+    def save(self, *args, **kwargs):
+        self.modified_time = timezone.now()
+        return super(BaseModel, self).save(*args, **kwargs)
