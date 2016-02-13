@@ -51,5 +51,6 @@ class BaseModel(models.Model):
         return self.save()
 
     def save(self, *args, **kwargs):
-        self.modified_time = timezone.now()
+        if kwargs.pop('modified', False):
+            self.modified_time = timezone.now()
         return super(BaseModel, self).save(*args, **kwargs)
